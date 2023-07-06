@@ -1,7 +1,10 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  background-color: #fff;
+  align-items: center;
+  background-color: lightblue;
+  padding: 20px;
+  height: 5vh;
 }
 
 .navbar-logo img {
@@ -11,12 +14,14 @@
 .navbar-menu {
   display: flex;
   justify-content: center;
+  align-items: center;
   list-style: none;
   margin: 0;
 }
 
 .navbar-item {
   margin: 0 10px;
+  padding: 0 10px;
 }
 
 .navbar-item a {
@@ -26,4 +31,8 @@
 
 .navbar-cart {
   font-size: 24px;
+}
+
+.navbar-item:hover {
+  font-size: large;
 }
