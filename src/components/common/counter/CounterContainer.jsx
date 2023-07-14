@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Counter from "./Counter";
+import Alert from "@mui/material/Alert";
+import Stack from "@mui/material/Stack";
 
 const CounterContainer = ({ stock, onAdd }) => {
   //Creando logica para boton
