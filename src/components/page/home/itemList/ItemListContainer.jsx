@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { products } from "../../../../productsMock";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
@@ -8,7 +8,7 @@ const ItemListContainer = () => {
   const [error, setError] = useState("");
 
   const { categoryName } = useParams();
-  console.log("category ", categoryName);
+  //console.log("category ", categoryName);
 
   useEffect(() => {
     let productosFiltrados = products.filter(
@@ -22,7 +22,7 @@ const ItemListContainer = () => {
     tarea.then((res) => setItems(res)).catch((error) => setError(error));
   }, [categoryName]);
 
-  console.log(items);
+  //console.log(items);
 
   return (
     <div>

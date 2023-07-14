@@ -3,10 +3,13 @@ import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useContext } from "react";
 
 import { Link } from "react-router-dom";
+import { CartContext } from "../../../context/CartContext";
 
 const cartWidget = () => {
+  const { cart } = useContext(CartContext);
   const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
       right: -3,
@@ -19,7 +22,7 @@ const cartWidget = () => {
     <div>
       <Link to="/cart">
         <IconButton aria-label="cart">
-          <StyledBadge badgeContent={4} color="secondary">
+          <StyledBadge badgeContent={cart.length} color="secondary">
             <ShoppingCartIcon />
           </StyledBadge>
         </IconButton>

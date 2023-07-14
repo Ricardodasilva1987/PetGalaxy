@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import CounterContainer from "../../../common/counter/CounterContainer";
 import { products } from "../../../../productsMock";
 import { useParams, useNavigate } from "react-router-dom";
+import { CartContext } from "../../../../context/CartContext";
 
 const ItemDetail = () => {
   const [producto, setProducto] = useState({});
+  const { addToCart } = useContext(CartContext);
 
   const { id } = useParams();
   const navigate = useNavigate();
+
   useEffect(() => {
     let productoSeleccionado = products.find((elemento) => elemento.id === +id);
     const tarea = new Promise((res, rej) => {
@@ -17,9 +20,12 @@ const ItemDetail = () => {
   }, [id]);
 
   const onAdd = (cantidad) => {
-    console.log(producto);
-    console.log(cantidad);
-    navigate("/cart"); //hook de react router dom, para poder linkear y navegar fuera del jsx ,( sin usar etiquetas Link to=)
+    let productCart = { ...producto, quantity: cantidad };
+
+    //console.log(producto);
+    //console.log(cantidad);
+    addToCart(productCart);
+    //navigate("/cart"); //hook de react router dom, para poder linkear y navegar fuera del jsx ,( sin usar etiquetas Link to=)
   };
   return (
     <div style={{ textAlign: "center" }}>
