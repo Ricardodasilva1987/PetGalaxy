@@ -42,12 +42,12 @@ const Footer = () => {
                 </a>
                 <a href="">
                   <FaInstagram />
-                  <a href="">
-                    <FaTwitter />
-                  </a>
-                  <a href="">
-                    <FaLinkedinIn />
-                  </a>
+                </a>
+                <a href="">
+                  <FaTwitter />
+                </a>
+                <a href="">
+                  <FaLinkedinIn />
                 </a>
               </div>
             </div>
