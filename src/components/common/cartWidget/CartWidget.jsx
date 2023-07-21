@@ -9,7 +9,8 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
 
 const cartWidget = () => {
-  const { cart } = useContext(CartContext);
+  const { getTotalQuantity } = useContext(CartContext);
+  let total = getTotalQuantity();
   const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
       right: -3,
@@ -22,7 +23,7 @@ const cartWidget = () => {
     <div>
       <Link to="/cart">
         <IconButton aria-label="cart">
-          <StyledBadge badgeContent={cart.length} color="secondary">
+          <StyledBadge badgeContent={total} color="secondary">
             <ShoppingCartIcon />
           </StyledBadge>
         </IconButton>

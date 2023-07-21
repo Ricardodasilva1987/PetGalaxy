@@ -2,16 +2,23 @@ import React, { useState } from "react";
 import Counter from "./Counter";
 import Alert from "@mui/material/Alert";
 import Stack from "@mui/material/Stack";
+import Swal from "sweetalert2";
 
-const CounterContainer = ({ stock, onAdd }) => {
+const CounterContainer = ({ stock, onAdd, initial = 1 }) => {
   //Creando logica para boton
 
-  const [contador, setContador] = useState(1);
+  const [contador, setContador] = useState(initial);
 
   const sumar = () => {
     contador < stock
       ? setContador(contador + 1)
-      : alert("Cantidad solicitada excede stock");
+      : Swal.fire({
+          position: "center",
+          icon: "warning",
+          title: "Cantidad solicitada excede stock",
+          showConfirmButton: false,
+          timer: 1500,
+        });
   };
   const restar = () => {
     contador > 1 && setContador(contador - 1);

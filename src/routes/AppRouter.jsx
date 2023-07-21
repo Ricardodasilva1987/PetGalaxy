@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 
 import Layout from "../components/layout/Layout";
 import { routes } from "./routes";
+import Error from "../components/page/home/error/Error";
 
 const AppRouter = () => {
   return (
@@ -13,7 +14,7 @@ const AppRouter = () => {
           ))}
         </Route>
 
-        <Route path="*" element={<h1>Error 404 NOT FOUND</h1>} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </div>
   );

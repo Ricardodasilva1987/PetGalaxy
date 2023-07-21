@@ -13,7 +13,7 @@ const CartContextProvider = ({ children }) => {
       let arrayNuevo = cart.map((elemento) => {
         //[{},{},{}] va a aretornar otro arreglo de la misma longitud
         if (elemento.id === item.id) {
-          return { ...elemento, quantity: elemento.quantity + item.quantity };
+          return { ...elemento, quantity: item.quantity };
         } else {
           return elemento;
         }
@@ -41,11 +41,35 @@ const CartContextProvider = ({ children }) => {
     return exist;
   };
 
+  //CALCULAR EL TOTAL
+  const getTotalPrice = () => {
+    let total = cart.reduce((acc, elemento) => {
+      return acc + elemento.quantity * elemento.price;
+    }, 0);
+    return total;
+  };
+  //CALCULAR LA CANTIDAD DE ITEMS
+
+  const getTotalQuantity = () => {
+    let total = cart.reduce((acc, elemento) => {
+      return acc + elemento.quantity;
+    }, 0);
+    return total;
+  };
+
+  const getQuantityById = (id) => {
+    const product = cart.find((elemento) => elemento.id === +id);
+    return product?.quantity; //esto es optional change
+  };
+
   let data = {
     cart: cart,
     addToCart: addToCart,
     clearCart: clearCart,
     deleteById: deleteById,
+    getTotalPrice: getTotalPrice,
+    getTotalQuantity: getTotalQuantity,
+    getQuantityById: getQuantityById,
   }; // se podria pasar asi cart, addtoCart y clearCart ya que etienen el mismo nombre clave valor, todo lo que se va a consumir en otro lado debe ir en este objeto data.
 
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
