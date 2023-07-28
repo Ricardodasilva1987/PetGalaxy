@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "../../../../context/CartContext";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import "./Cart.css";
 
 const CartContainer = () => {
   const { cart, clearCart, deleteById, getTotalPrice } =
@@ -27,7 +28,7 @@ const CartContainer = () => {
 
   return (
     <div style={{ marginTop: "10px" }}>
-      {total < 1 ? <h3>Carrito vacio</h3> : <h3>Su compra : </h3>}
+      {total < 1 ? <h3>Carrito vacio</h3> : <h3>Su listado : </h3>}
       <br />
       <br />
       {cart.map((elemento) => {
@@ -45,7 +46,13 @@ const CartContainer = () => {
               <h4>Producto: {elemento.tittle}</h4>
               <h4>Cantidad: {elemento.quantity}</h4>
               <h4> TOTAL : $ {elemento.price}</h4>
-              <button onClick={() => deleteById(elemento.id)}>Eliminar</button>
+              <button
+                className="eliminar"
+                onClick={() => deleteById(elemento.id)}
+              >
+                Eliminar
+              </button>
+              <br />
             </div>
             <div>
               <img src={elemento.img} style={{ height: "15vh" }} alt="" />
@@ -53,9 +60,16 @@ const CartContainer = () => {
           </div>
         );
       })}
-      {cart.length > 0 && <button onClick={limpiar}>Limpiar carrito</button>}
-      <Link to="/form">Compra Final</Link>
-      {total != 0 && <h2>El total es :{total} </h2>}
+
+      {cart.length > 0 && (
+        <button className="limpiar" onClick={limpiar}>
+          Limpiar carrito
+        </button>
+      )}
+      <Link to="/form">
+        <button className="compra">Realizar compra</button>
+      </Link>
+      {total != 0 && <h2>El total es : $ {total} </h2>}
     </div>
   );
 };

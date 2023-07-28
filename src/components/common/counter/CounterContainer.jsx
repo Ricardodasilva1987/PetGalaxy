@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Counter from "./Counter";
-import Alert from "@mui/material/Alert";
-import Stack from "@mui/material/Stack";
+
 import Swal from "sweetalert2";
 
 const CounterContainer = ({ stock, onAdd, initial = 1 }) => {

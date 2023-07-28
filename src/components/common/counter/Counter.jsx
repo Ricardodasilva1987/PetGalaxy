@@ -1,33 +1,40 @@
-import React from "react";
+import "./Counter.css";
 
 const Counter = ({ contador, sumar, restar, onAdd }) => {
   return (
     <div
+      className="main"
       style={{
         display: "flex",
         justifyContent: "center",
         height: "7vh",
       }}
     >
-      <button onClick={restar}> - </button>
+      <button className="plus" onClick={restar}>
+        {" "}
+        -{" "}
+      </button>
       <div
         style={{
           border: "solid 1px",
-          width: "15%",
-          display: "flex",
+          width: "10%",
           justifyContent: "center",
         }}
       >
         <h3>{contador}</h3>
       </div>
-      <button onClick={sumar}> + </button>
+      <button className="plus" onClick={sumar}>
+        {" "}
+        +{" "}
+      </button>
 
       <button
+        className="agregar"
         onClick={() => {
           onAdd(contador);
         }}
       >
-        Agregar al carrito
+        Agregar al Carro
       </button>
     </div>
   );

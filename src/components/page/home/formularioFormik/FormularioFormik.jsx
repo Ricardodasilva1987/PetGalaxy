@@ -1,4 +1,4 @@
-import { Button, TextField } from "@mui/material";
+import { Button, TextField, Grid } from "@mui/material";
 import { useContext, useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -58,41 +58,66 @@ const FormularioFormik = () => {
       {orderId ? (
         <>
           <h3>Gracias por su compra.</h3>
+          <br />
+
           <h4>Su numero de compra es :{orderId}</h4>
-          <Link to="/">Volver a comprar</Link>
+          <br />
+          <br />
+          <Link to="/">
+            <Button variant="contained">Volver a comprar</Button>
+          </Link>
+          <br />
         </>
       ) : (
-        <div style={{ padding: "40px" }}>
-          <form onSubmit={handleSubmit}>
-            <TextField
-              label="Nombre"
-              variant="outlined"
-              name="name"
-              error={errors.name ? true : false}
-              onChange={handleChange}
-              helperText={errors.name}
-            />
-            <TextField
-              label="Telefono"
-              variant="outlined"
-              name="telefono"
-              error={errors.telefono ? true : false}
-              onChange={handleChange}
-              helperText={errors.name}
-            />
-            <TextField
-              label="Email"
-              variant="outlined"
-              name="email"
-              error={errors.email ? true : false}
-              onChange={handleChange}
-              helperText={errors.name}
-            />
-
-            <Button type="submit" variant="contained">
-              Enviar
-            </Button>
-          </form>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            padding: "60px",
+            marginLeft: "35%",
+            textAlign: "center",
+          }}
+        >
+          <Grid container spacing={3}>
+            <form onSubmit={handleSubmit}>
+              <h4>Completa tus datos para culminar compra</h4>
+              <Grid item xs={12}>
+                <TextField
+                  label="Nombre"
+                  variant="outlined"
+                  name="name"
+                  error={errors.name ? true : false}
+                  onChange={handleChange}
+                  helperText={errors.name}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  label="Telefono"
+                  variant="outlined"
+                  name="telefono"
+                  error={errors.telefono ? true : false}
+                  onChange={handleChange}
+                  helperText={errors.name}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  label="Email"
+                  variant="outlined"
+                  name="email"
+                  error={errors.email ? true : false}
+                  onChange={handleChange}
+                  helperText={errors.name}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Button type="submit" variant="contained">
+                  Enviar
+                </Button>
+              </Grid>
+            </form>
+          </Grid>
         </div>
       )}
     </div>

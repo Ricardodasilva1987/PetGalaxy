@@ -1,0 +1,35 @@
+.plus {
+  background-color: lightblue;
+  width: 3%;
+}
+
+.main {
+  margin-bottom: 30px;
+}
+
+.agregar {
+  margin-left: 1%;
+  background: lightblue;
+  background-image: -webkit-linear-gradient(top, lightblue, #2980b9);
+  background-image: -moz-linear-gradient(top, lightblue, #2980b9);
+  background-image: -ms-linear-gradient(top, lightblue, #2980b9);
+  background-image: -o-linear-gradient(top, lightblue, #2980b9);
+  background-image: linear-gradient(to bottom, lightblue, #2980b9);
+
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 13px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.agregar:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
