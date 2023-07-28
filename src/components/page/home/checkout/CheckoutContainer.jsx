@@ -13,18 +13,15 @@ const CheckoutContainer = () => {
 
   const enviarForm = (evento) => {
     evento.preventDefault();
-    console.log("form enviado");
-    console.log(evento);
+
     /* const datos = {
       nombre, //cuando la el key y el value son de igual nombre, se puede colocar simplemente nombre
       apellido: apellido, //este esjemplo es colocando clave y valor, pero tambien se podria colocar solo apellido y funcionaria.
     };*/
-
-    console.log(data);
   };
 
   /*const capturarNombre = (event) => {
-    //console.log(event.target.value);
+    //
     setData({ ...data, nombre: event.target.value }); //se utiliza el spread operator para conservar las key:values originales. y que no se modifiquensi las demas estan vacias.
   };
   const capturarApellido = (event) => {

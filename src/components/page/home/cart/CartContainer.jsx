@@ -24,7 +24,7 @@ const CartContainer = () => {
   };
 
   let total = getTotalPrice();
-  console.log(cart);
+
   return (
     <div style={{ marginTop: "10px" }}>
       {total < 1 ? <h3>Carrito vacio</h3> : <h3>Su compra : </h3>}

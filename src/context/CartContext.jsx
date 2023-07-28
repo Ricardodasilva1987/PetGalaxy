@@ -21,7 +21,6 @@ const CartContextProvider = ({ children }) => {
       setCart(arrayNuevo);
     } else {
       setCart([...cart, item]);
-      console.log("item :", item);
     }
   };
   const clearCart = () => {
@@ -29,7 +28,6 @@ const CartContextProvider = ({ children }) => {
   };
 
   const deleteById = (id) => {
-    console.log(id);
     let newArray = cart.filter((elemento) => elemento.id !== id);
     setCart(newArray);
   };

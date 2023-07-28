@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 const FormularioFormik = () => {
   const { cart, getTotalPrice } = useContext(CartContext);
   const [orderId, setOrderId] = useState("");
-  console.log(orderId);
+
   let total = getTotalPrice();
   const { handleSubmit, handleChange, errors } = useFormik({
     initialValues: {
@@ -25,7 +25,6 @@ const FormularioFormik = () => {
       email: "",
     },
     onSubmit: (data) => {
-      console.log(data);
       let order = {
         buyer: data,
         items: cart,

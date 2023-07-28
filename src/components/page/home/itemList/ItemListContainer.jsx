@@ -24,7 +24,6 @@ const ItemListContainer = () => {
     }
 
     getDocs(consulta).then((res) => {
-      console.log(res.docs);
       let productos = res.docs.map((doc) => {
         return { ...doc.data(), id: doc.id };
       });
@@ -42,8 +41,6 @@ const ItemListContainer = () => {
     tarea.then((res) => setItems(res)).catch((error) => setError(error));
   */
   }, [categoryName]);
-
-  //console.log(items);
 
   return (
     <div>
