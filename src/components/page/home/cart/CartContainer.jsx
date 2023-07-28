@@ -66,9 +66,16 @@ const CartContainer = () => {
           Limpiar carrito
         </button>
       )}
-      <Link to="/form">
-        <button className="compra">Realizar compra</button>
-      </Link>
+      {cart.length < 1 ? (
+        <Link to="/">
+          <button className="compra">Volver a inicio</button>
+        </Link>
+      ) : (
+        <Link to="/form">
+          <button className="compra">Realizar compra</button>
+        </Link>
+      )}
+
       {total != 0 && <h2>El total es : $ {total} </h2>}
     </div>
   );
