@@ -1,6 +1,6 @@
 import "./Navbar.css";
 import CartWidget from "../../common/cartWidget/cartWidget";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   let userRol = "user";
