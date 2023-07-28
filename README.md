@@ -8,7 +8,7 @@
 - Back-End: Firebase
 
 ```
-git clone asdasdmekwmasd
+git clone https://github.com/Ricardodasilva1987/PetGalaxy.git
 ```
 
 ### Variables de entorno
