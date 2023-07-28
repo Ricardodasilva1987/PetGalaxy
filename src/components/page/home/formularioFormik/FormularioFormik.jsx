@@ -46,7 +46,7 @@ const FormularioFormik = () => {
       });
     },
     validationSchema: Yup.object({
-      name: Yup.string().required().min(5).max(12),
+      name: Yup.string().required().min(3).max(12),
       telefono: Yup.string().required().min(6),
       email: Yup.string().email().required(),
     }),
@@ -59,9 +59,21 @@ const FormularioFormik = () => {
         <>
           <h3>Gracias por su compra.</h3>
           <br />
-
-          <h4>Su numero de compra es :{orderId}</h4>
+          <h4>Su N° OC :{orderId}</h4>
           <br />
+          <br />
+          <p>Detalle de compra:</p>
+          <ul>
+            {cart.map((items) => {
+              return (
+                <li key={items.id}>
+                  Cant: {items.quantity}. {items.tittle} -----${items.price}
+                </li>
+              );
+            })}
+          </ul>
+          <br />
+          TOTAL: $ {total}
           <br />
           <Link to="/">
             <Button variant="contained">Volver a comprar</Button>
