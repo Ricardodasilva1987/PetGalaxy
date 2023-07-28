@@ -1,4 +1,3 @@
-import React from "react";
 import { db } from "../../../../firebaseConfig";
 import { addDoc, collection } from "firebase/firestore";
 import { products } from "../../../../productsMock";
